@@ -1,0 +1,9 @@
+
+apiVersion: 1.0.0
+metadata:
+  name: writers
+projects:
+- name: writers
+  source:
+    type: git
+    location: https://github.com/lexa78/writers-model
