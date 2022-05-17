@@ -2,7 +2,7 @@
 schemaVersion: 2.0.0
 metadata:
   name: writers
-project:
+projects:
 - name: writers
   source:
     type: git
