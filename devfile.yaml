@@ -1,13 +1,9 @@
 
-<<<<<<< HEAD
-schemaVersion: 2.1.0
-=======
 schemaVersion: 2.0.0
->>>>>>> 632e51c18e6a46ab66251145b6809375969ed080
 metadata:
-  name: writers
+  generateName: writers-
 projects:
-- name: writers
-  source:
-    type: git
-    location: https://github.com/lexa78/writers-model
+  - name: writers
+    source:
+      type: git
+      location: https://github.com/lexa78/writers-model
