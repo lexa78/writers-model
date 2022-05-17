@@ -1,9 +1,41 @@
 
 schemaVersion: 2.0.0
-metadata:
-  generateName: writers-
+metadata:  
+  generateName: flask-
 projects:
-  - name: writers
+  - name: flask-app
     source:
       type: git
       location: "https://github.com/lexa78/writers-model"
+components:
+  - type: chePlugin
+    id: ms-python/python/latest
+  - type: dockerimage
+    alias: python
+    image: quay.io/eclipse/che-python-3.8:next
+    memoryLimit: 512Mi
+    mountSources: true
+    env:
+      - name: FLASK_SECRET
+        value: 'you-will-never-guess'
+    endpoints:
+      - name: websocket-forward
+        port: 8080
+        attributes:
+          protocol: http
+          secure: 'false'
+          public: 'true'
+          discoverable: 'false'
+commands:
+  - name: run
+    actions:
+      - type: exec
+        component: python
+        command: '${HOME}/.local/bin/gunicorn wsgi:application -b 0.0.0.0:8080'
+        workdir: '${CHE_PROJECTS_ROOT}/flask-app'
+  - name: install
+    actions:
+      - type: exec
+        component: python
+        command: 'pip3 install -r requirements.txt'
+        workdir: '${CHE_PROJECTS_ROOT}/flask-app'
