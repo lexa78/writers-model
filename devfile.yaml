@@ -6,4 +6,4 @@ projects:
   - name: writers
     source:
       type: git
-      location: https://github.com/lexa78/writers-model
+      location: "https://github.com/lexa78/writers-model"
