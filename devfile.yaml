@@ -11,4 +11,8 @@ projects:
 components:
   - name: outerloop-build
     image:
-      imageName: python-image:latest      
+      imageName: python-image:latest
+      dockerfile:
+        uri: docker/Dockerfile
+        buildContext: .
+        rootRequired: false      
