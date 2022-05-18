@@ -14,7 +14,7 @@ if not txt_file is None:
     st.markdown('<h2>Source text</h2>', unsafe_allow_html=True)
 
     text_val=[]
-    with open(txt_file, 'r') as f:
+    with open(txt_file, 'r', encoding="windows-1251") as f:
       text = f.read()
       text = text.replace('
 ', ' ')
