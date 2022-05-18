@@ -7,4 +7,8 @@ projects:
   - name: writers
     git:
       remotes:
-        origin: "https://github.com/lexa78/writers-model"      
+        origin: "https://github.com/lexa78/writers-model"
+components:
+  - name: outerloop-build
+    image:
+      imageName: python-image:latest      
